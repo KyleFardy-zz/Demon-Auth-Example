@@ -1,8 +1,8 @@
 <?php
 class Demon_Auth{
-    public $auth_key = "";
+    	public $auth_key = "";
 	
-    public $logged_in = false;
+    	public $logged_in = false;
 	
 	public function __construct($key){
 		$this->auth_key = self::sanitize($key);
@@ -44,7 +44,7 @@ class Demon_Auth{
 			switch($return['Auth']['Banned']){
 				case 0: return $return['Auth']['Username']." Is Not Banned!"; break;
 				case 1: return $return['Auth']['Username']." Is Banned!"; break;
-				default: return ">We Failed To Check If ".$return['Auth']['Username']." Is Banned!"; break;
+				default: return "We Failed To Check If ".$return['Auth']['Username']." Is Banned!"; break;
 			}
 		}
 		else
