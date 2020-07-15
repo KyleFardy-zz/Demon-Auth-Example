@@ -57,7 +57,7 @@ if(isset($_POST['login'])){
 	session_start();
 	ob_start();
 	$DFAUTH = new Demon_Auth($_POST['auth_key']);
-	$DFResp = sprintf("<div class=\"alert alert-primary\">%s<hr>%s</div>", $DFAUTH->login(), $DFAUTH->is_banned());
+	$DFResp = sprintf("<div class=\"form-group\"><div class=\"alert alert-primary\">%s<hr>%s</div></div>", $DFAUTH->login(), $DFAUTH->is_banned());
 }
 ?>
 <!DOCTYPE html>
@@ -87,7 +87,7 @@ if(isset($_POST['login'])){
                </div>
                <form method="POST">
                   <div class="panel-body">
-					 <?php if(!empty($DFResp)){ echo $DFResp; } ?>
+		     <?php if(!empty($DFResp)){ echo $DFResp; } ?>
                      <div class="form-group">
                         <label for="auth_key">Enter Your Auth Key</label>
                         <input type="text" name="auth_key" id="auth_key" class="form-control text-center" placeholder="XXXX-XXXX-XXXX-XXXX">
